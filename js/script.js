@@ -1,6 +1,6 @@
 const BASE_URL = "https://fakestoreapi.com/";
 const $container = document.querySelector(".row");
-const $nav = document.querySelector(".nav");
+const $nav = document.querySelector(".navv");
 const $search = document.querySelector(".input");
 const $select = document.querySelector(".selection");
 
@@ -89,7 +89,7 @@ function getCategory(base) {
     .map(({ route, title }) => {
       return `
       <div class = "nav">
-          <h5 onclick="get_category('${route}')"> ${title}</h5>
+          <h5 class = "categories" onclick="get_category('${route}')"> ${title}</h5>
       </div>
     `;
     })
@@ -99,7 +99,9 @@ function getCategory(base) {
   $nav.insertAdjacentHTML(
     "afterbegin",
     `
-    <h5 onclick="location.reload()">all</h5>
+      <div class ="nav">
+          <h5 class ="categories" onclick="location.reload()">all</h5>
+      </div>
   `
   );
 }
@@ -151,3 +153,4 @@ function get_category(el) {
     }
   });
 }
+
